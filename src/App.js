@@ -25,14 +25,14 @@ export default function App() {
     <>
       <div
         style={{
-          fontSize: '16px',
+          fontSize: '28px',
           fontWeight: 'bold',
           textAlign: 'right',
           marginRight: '20px',
           marginTop: '20px',
         }}
         onClick={handleClose}>
-        X
+        &times;
       </div>
 
       {isClosed ? (
