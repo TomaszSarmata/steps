@@ -10,18 +10,26 @@ export default function App() {
   const [step, setStep] = useState(1);
 
   const handlePrevious = () => {
-    setStep(step - 1);
+    if (step >= 2) {
+      setStep(step - 1);
+    } else {
+      setStep(3);
+    }
   };
   const handleNext = () => {
-    setStep(step + 1);
+    if (step <= 2) {
+      setStep(step + 1);
+    } else {
+      setStep(1);
+    }
   };
 
   return (
     <div className="steps">
       <div class="numbers">
-        <div className="active">1</div>
-        <div>2</div>
-        <div>3</div>
+        <div className={`${step === 1 ? 'active' : ''}`}>1</div>
+        <div className={`${step === 2 ? 'active' : ''}`}>2</div>
+        <div className={`${step === 3 ? 'active' : ''}`}>3</div>
       </div>
 
       <p class="message">
