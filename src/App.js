@@ -11,14 +11,14 @@ export default function App() {
   const [isClosed, setIsClosed] = useState(false);
 
   const handlePrevious = () => {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((curr) => curr - 1);
   };
   const handleNext = () => {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((curr) => curr + 1);
   };
 
   const handleClose = () => {
-    setIsClosed(!isClosed);
+    setIsClosed((curr) => !curr);
   };
 
   return (
