@@ -7,6 +7,15 @@ const messages = [
 ];
 
 export default function App() {
+  return (
+    <>
+      <Steps />
+      <Steps />
+    </>
+  );
+}
+
+function Steps() {
   const [step, setStep] = useState(1);
   const [isClosed, setIsClosed] = useState(false);
 
@@ -43,17 +52,17 @@ export default function App() {
         </div>
       ) : (
         <div className="steps">
-          <div class="numbers">
+          <div className="numbers">
             <div className={step >= 1 ? 'active' : ''}>1</div>
             <div className={step >= 2 ? 'active' : ''}>2</div>
             <div className={step >= 3 ? 'active' : ''}>3</div>
           </div>
 
-          <p class="message">
+          <p className="message">
             Step {step}: {messages[step - 1]}
           </p>
 
-          <div class="buttons">
+          <div className="buttons">
             <button
               style={{ backgroundColor: '#7950f2', color: '#fff' }}
               onClick={handlePrevious}>
